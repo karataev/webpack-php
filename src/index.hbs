@@ -1,0 +1,24 @@
+<?
+$foo = 'fooo';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{> partials/header}}
+
+<h1>PHP here</h1>
+<h2><?= $foo ?></h2>
+
+{{> partials/footer}}
+
+
+
+</body>
+</html>
