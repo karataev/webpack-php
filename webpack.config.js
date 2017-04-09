@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
@@ -25,6 +26,7 @@ module.exports = {
     ]
   },
   devServer: {
+    hot: true,
     proxy: {
       '/': {
         target: 'http://webpack-php.local',
@@ -40,6 +42,7 @@ module.exports = {
     }),
     new WriteFilePlugin({
       test: /\.php$/
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
